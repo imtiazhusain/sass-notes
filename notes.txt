@@ -1,0 +1,125 @@
+sass is a preprocess or u can say css with super powers
+sass vs scss
+
+jb hm css use krty the tb is ko sass bolty they or jb say css3 aya ab is ko scss bolty
+jb hm css use krty they tb hm sass use krty they or abhi q k css3 chal rha tu hm scss use ktry
+
+installation
+
+
+1)for react 
+install pakage
+npm intall --save-dev node-sass
+bs itna krna hai or ap ap scss use kr skti react may
+
+
+
+2) for simple html
+
+to use sccs install live sass compiler plugin
+
+
+create a file index.htlml write some code
+then creaet a folder scss and inside scss folder create a main.scss file and write your css then click watch scss at bottom it will compile our css and create 2 files one file is main.css.map and another is main.css this the file that has been coverted to pure css and we link this file to our html file not teh main.scss because browser won't understand it so what scss does is compile this main.scss to main.css that browser understand
+
+one thing to understand that when we write like display:grid or flex so compiler add older browser code(prefixes) too it is the feature or scss
+
+
+scss features
+
+1) operators
+
+font-size:5rem + 5rem; 
+font-size:15rem - 5rem; 
+font-size:5rem * 5rem; 
+font-size:15rem / 5rem;
+
+2)veriables
+$bg-color:#10ac84;
+
+backgournd-color:$bg-color; 
+
+
+
+3)nesting
+mtlb div k inder k childs ko css dena normally asy dety they 'div button{}' but now you can do this
+
+.main_header {
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background: $bg-color;
+
+
+h1 {
+color: #222f3e;
+font-size: 5rem + 5rem;
+}
+
+
+p {
+color: #222f3e;
+font-size: 5rem + 5rem;
+}
+
+}
+
+ye .main_header k inder h1 or p elements hain 
+
+ap pseudo class like hover etc bhi use kr skty is trha
+
+buton{
+background-color:green;
+&:hover{
+background-color:red;
+}
+
+}
+
+-----------
+
+4)mixin
+
+agr ap ko lgta k kuch properties hm bar bar use kr rhy tu us ko ap k varible bana skty or use kr skty like flex ka item or justing item center ka code bar bar use hota tu hm yha mixin use kr skty like this
+
+
+@mixin flexprob{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+
+
+using it is simple like this
+
+
+
+.main_header {
+@include flexprob;
+width: 100vw;
+height: 100vh;
+background: $bg-color;
+
+}
+
+
+
+
+
+
+5)partials
+
+yani k ap hr section/block k leye alg alg file bna skty or phir us file ko import kr skty main.scss may tak code clean rhy or easy to find ho sky
+like ap navabar k leye alg file bna skty, here section k leye alg etc
+
+
+ye bhi simple hai bs ap nay file banni hai usk start may _ denda hai or phir koi bhi nam sath scss key extension like this _navbar.scss ab is file may scss lkho or phir is ko import kr lo apni main.scss file main like this
+
+@import "navabar"
+
+ap nay _ ko bhi ni dena or .scss bhi just name dena tu ye import ho jana but ap agr _ do gy tb bhi kam kry ga but normally log ni dety same extension do ya na to tb bhi msla ni normally log ni dety

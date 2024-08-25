@@ -1,0 +1,71 @@
+// importing partials
+@import "navbar";
+
+// varibles
+$bg-color: #10ac44;
+
+// creating mixin
+@mixin textStyle {
+  color: aqua;
+  text-align: center;
+  font-size: 20px;
+}
+
+// creating mixin with parameters
+@mixin flexProp($para1, $para2) {
+  display: flex;
+  justify-content: $para1;
+  align-items: $para2;
+  flex-direction: column;
+}
+
+.container {
+  padding: 2rem;
+  background-color: $bg-color;
+  height: 10rem + 5rem; //operators
+
+  //    nesting
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+
+    // pseduo classes
+    &:hover {
+      background-color: rgb(38, 192, 234);
+      outline: none;
+      border: none;
+    }
+  }
+
+  // using  mixin
+  p {
+    @include textStyle;
+  }
+}
+
+.bottom {
+  @include flexProp(center, center);
+  padding: 2rem;
+  background-color: crimson;
+
+  //    nesting
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+
+    // pseduo classes
+    &:hover {
+      background-color: rgb(38, 192, 234);
+      outline: none;
+      border: none;
+    }
+  }
+}
